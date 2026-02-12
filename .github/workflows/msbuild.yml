@@ -50,8 +50,10 @@ jobs:
         cd ${{env.SOLUTION_FILE_PATH}}
         ls
         ls obj/
-        ls ${{env.NAME_BATGADGET}}/
-        Compress-Archive -Path ${{env.NAME_BATGADGET}}/obj/Release/${{env.NAME_BATGADGET}}.exe -DestinationPath ${{ env.NAME_BATGADGET }}.zip
+        ls obj/Release
+        ls bin/
+        ls bin/Release
+        Compress-Archive -Path bin/Release/${{env.NAME_BATGADGET}}.exe -DestinationPath ${{ env.NAME_BATGADGET }}.zip
 
     - name: Create Release
       id: create_release
